@@ -1,10 +1,12 @@
+package AcademyMain;
+import Controller.SubjectRegisterManager;
 import Controller.TraineDAO;
 import View.MENU_CHOICE;
 import View.MenuViewer;
 import View.SUBJECT_CHOICE;
 import View.TRAINEE_CHOICE;
 
-public class UniversityRegisterCoursesMain {
+public class Academy {
 
 	public static void main(String[] args) {
 		mainMenu();
@@ -80,10 +82,10 @@ public class UniversityRegisterCoursesMain {
 	}
 
 	// 학과 메뉴
-	private static void lessonMenu() {
+	private static void lessonMenu() throws Exception {
 		int choice = 0;
 		// 학과정보를 curd를 위한 컨트롤러
-		// SubjectRegisterManager subjectManager = new SubjectRegisterManager();
+		SubjectRegisterManager subjectManager = new SubjectRegisterManager();
 		// 학과메뉴선택 디스플레이
 		MenuViewer.subjectMenuView();
 		// 학과 메뉴 입력
@@ -95,15 +97,15 @@ public class UniversityRegisterCoursesMain {
 			break;
 		case SUBJECT_CHOICE.INSERT:
 			System.out.println("");
-//			subjectManager.subjectRegistr();
+			subjectManager.subjectRegistr();
 			break;
 		case SUBJECT_CHOICE.UPDATE:
 			System.out.println("");
-//			subjectManager.subjectUpdate();
+			subjectManager.subjectUpdate();
 			break;
 		case SUBJECT_CHOICE.DELETE:
 			System.out.println("");
-//			subjectManager.subjectDelete();
+			subjectManager.subjectDelete();
 			break;
 		case SUBJECT_CHOICE.MAIN:
 			return;
@@ -147,27 +149,27 @@ public class UniversityRegisterCoursesMain {
 	}
 
 	// 과목 메뉴
-	private static void subjectMenu() {
+	private static void subjectMenu()throws Exception {
 		int choiceNum;
-		// SubjectRegisterManager subjectManager = new SubjectRegisterManager();
+     	 SubjectRegisterManager subjectManager = new SubjectRegisterManager();
 		MenuViewer.subjectMenuView();
 		choiceNum = Integer.parseInt(MenuViewer.scan.nextLine());
 		switch (choiceNum) {
 		case SUBJECT_CHOICE.LIST:
 			System.out.println("");
-			// subjectManager.subjectList();
+			 subjectManager.subjectList();
 			break;
 		case SUBJECT_CHOICE.INSERT:
 			System.out.println("");
-			// subjectManager.subjectRegistr();
+			 subjectManager.subjectRegistr();
 			break;
 		case SUBJECT_CHOICE.UPDATE:
 			System.out.println("");
-			// subjectManager.subjectUpdate();
+			 subjectManager.subjectUpdate();
 			break;
 		case SUBJECT_CHOICE.DELETE:
 			System.out.println("");
-			// subjectManager.subjectDelete();
+			 subjectManager.subjectDelete();
 			break;
 		case SUBJECT_CHOICE.MAIN:
 			return;
