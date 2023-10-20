@@ -19,7 +19,7 @@ public class DBUtil {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			System.out.println("oracleDriver 적재성공");
 //             2.오라클데이타베이스 연결
-			con = DriverManager.getConnection("jdbc:oracle:thin:@127.0.0.1:1521/xe", "hr", "hr");
+			con = DriverManager.getConnection(url,user,pwd);
 			System.out.println("OracleDriver 접속성공");
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
@@ -30,5 +30,6 @@ public class DBUtil {
 		}
 		return con;
 	}
+
 	
 }
