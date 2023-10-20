@@ -76,9 +76,7 @@ public class SubjectRegisterManager {
 		svo.setNo(s_no);
 		svo.setS_num(s_num);
 		svo.setS_name(s_name);
-		
 		sd.setSubjectUpdate(svo);
-		
 		System.out.println();
 		System.out.println("학과 전체 리스트");
 		sd.getSubjectTotalList();

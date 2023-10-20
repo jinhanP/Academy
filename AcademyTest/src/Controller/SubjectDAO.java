@@ -4,19 +4,19 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
 import Model.SubjectVO;
 
 public class SubjectDAO {
-	
+		
 	//학과 목록
-	public void getSubjectTotalList() throws Exception {
+	public static void getSubjectTotalList() throws Exception {
 		
 		String sql = "select * from subject order by no";
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		SubjectVO sv = null;
+	
 		
 		try {
 				
@@ -52,16 +52,18 @@ public class SubjectDAO {
 		}
 	}
 	
-	//학과 등록
+	//학과 등록 관리
 	public void setSubjectRegiste(SubjectVO svo) throws Exception {
 		
 		String sql = "insert into subject(no, s_num, s_name) values (subject_seq.nextval, ?, ?)";
 		Connection con = null;
 		PreparedStatement pstmt = null;
+		System.out.println("dddd1");
 		
 		try {
 			
 			con = DBUtil.makeConnection();
+			System.out.println("dddd1");
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, svo.getS_num());
 			pstmt.setString(2, svo.getS_name());
@@ -119,12 +121,13 @@ public class SubjectDAO {
 			}finally {
 				try {
 					//데이터베이스와의 연결에 사용되었던 오브젝트 해제
+					System.out.println("lolo,");
 					if(pstmt != null)
 						pstmt.close();
 					if(con != null)
 						con.close();
 				}catch(SQLException e) {
-					
+					System.out.println("dwadwa");
 				}
 			}
 		}
