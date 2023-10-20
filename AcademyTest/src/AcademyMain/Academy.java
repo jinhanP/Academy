@@ -1,4 +1,5 @@
 package AcademyMain;
+import Controller.StudentRegisterManager;
 import Controller.SubjectRegisterManager;
 import Controller.TraineDAO;
 import View.MENU_CHOICE;
@@ -115,12 +116,12 @@ public class Academy {
 	}
 
 	// 학생 메뉴
-	private static void studentMenu() {
-		int choice = 0;
+	private static void studentMenu()throws Exception {
+		int choice;
 		// 학과정보를 curd를 위한 컨트롤러
-		// SubjectRegisterManager subjectManager = new SubjectRegisterManager();
+		 StudentRegisterManager studentManager = new StudentRegisterManager();
 		// 학과메뉴선택 디스플레이
-		MenuViewer.subjectMenuView();
+		MenuViewer.studentMenuView();
 		// 학과 메뉴 입력
 		choice = MenuViewer.scan.nextInt();
 		MenuViewer.scan.nextLine();
@@ -131,15 +132,15 @@ public class Academy {
 			break;
 		case SUBJECT_CHOICE.INSERT:
 			System.out.println("");
-//				subjectManager.subjectRegistr();
+			studentManager.studentRegistr();
 			break;
 		case SUBJECT_CHOICE.UPDATE:
 			System.out.println("");
-//				subjectManager.subjectUpdate();
+			studentManager.studentUpdate();
 			break;
 		case SUBJECT_CHOICE.DELETE:
 			System.out.println("");
-//				subjectManager.subjectDelete();
+			studentManager.studnetTotalList();
 			break;
 		case SUBJECT_CHOICE.MAIN:
 			return;
@@ -151,25 +152,25 @@ public class Academy {
 	// 과목 메뉴
 	private static void subjectMenu()throws Exception {
 		int choiceNum;
-     	 SubjectRegisterManager subjectManager = new SubjectRegisterManager();
+//     	 LessonRegisterManager lessonManager = new LessonRegisterManager();
 		MenuViewer.subjectMenuView();
 		choiceNum = Integer.parseInt(MenuViewer.scan.nextLine());
 		switch (choiceNum) {
 		case SUBJECT_CHOICE.LIST:
 			System.out.println("");
-			 subjectManager.subjectList();
+//			 subjectManager.subjectList();
 			break;
 		case SUBJECT_CHOICE.INSERT:
 			System.out.println("");
-			 subjectManager.subjectRegistr();
+//			 subjectManager.subjectRegistr();
 			break;
 		case SUBJECT_CHOICE.UPDATE:
 			System.out.println("");
-			 subjectManager.subjectUpdate();
+//			 subjectManager.subjectUpdate();
 			break;
 		case SUBJECT_CHOICE.DELETE:
 			System.out.println("");
-			 subjectManager.subjectDelete();
+//			 subjectManager.subjectDelete();
 			break;
 		case SUBJECT_CHOICE.MAIN:
 			return;

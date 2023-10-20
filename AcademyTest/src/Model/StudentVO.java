@@ -12,9 +12,9 @@ public class StudentVO {
 	private String s_num;		// 학과번호
 	private String sd_birthday;	// 생년월일
 	private String sd_phone;	// 폰 번호
-	private String sd_adddress;	// 주소
+	private String sd_address;	// 주소
 	private String sd_email;	// 이메일
-	private String se_date;		// 등록일
+	private String sd_date;		// 등록일
 	
 	
 	public StudentVO() {
@@ -23,7 +23,7 @@ public class StudentVO {
 	}
 
 	public StudentVO(int no, String sd_num, String sd_name, String sd_id, String sd_passwd, String s_num,
-			String sd_birthday, String sd_phone, String sd_adddress, String sd_email, String se_date) {
+			String sd_birthday, String sd_phone, String sd_address, String sd_email, String sd_date) {
 		super();
 		this.no = no;
 		this.sd_num = sd_num;
@@ -33,9 +33,9 @@ public class StudentVO {
 		this.s_num = s_num;
 		this.sd_birthday = sd_birthday;
 		this.sd_phone = sd_phone;
-		this.sd_adddress = sd_adddress;
+		this.sd_address = sd_address;
 		this.sd_email = sd_email;
-		this.se_date = se_date;
+		this.sd_date = sd_date;
 	}
 
 	public int getNo() {
@@ -102,12 +102,12 @@ public class StudentVO {
 		this.sd_phone = sd_phone;
 	}
 
-	public String getSd_adddress() {
-		return sd_adddress;
+	public String getSd_address() {
+		return sd_address;
 	}
 
-	public void setSd_adddress(String sd_adddress) {
-		this.sd_adddress = sd_adddress;
+	public void setSd_address(String sd_address) {
+		this.sd_address = sd_address;
 	}
 
 	public String getSd_email() {
@@ -118,12 +118,12 @@ public class StudentVO {
 		this.sd_email = sd_email;
 	}
 
-	public String getSe_date() {
-		return se_date;
+	public String getSd_date() {
+		return sd_date;
 	}
 
-	public void setSe_date(String se_date) {
-		this.se_date = se_date;
+	public void setSd_date(String sd_date) {
+		this.sd_date = sd_date;
 	}
 
 	@Override

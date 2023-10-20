@@ -1,12 +1,12 @@
 package Controller;
 
-import java.sql.Connection;
+import java.sql.Connection; 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import Model.SubjectVO;
 
-public class SubjectDAO {
+public class SubjectDAO { //CURD
 		
 	//학과 목록
 	public static void getSubjectTotalList() throws Exception {
@@ -169,4 +169,8 @@ public class SubjectDAO {
 			}
 		}
 	}
+
+	
+
+
 }
