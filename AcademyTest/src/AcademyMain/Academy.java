@@ -1,7 +1,7 @@
 package AcademyMain;
 import Controller.StudentRegisterManager;
 import Controller.SubjectRegisterManager;
-import Controller.TraineDAO;
+import Controller.TraineeRegisterManager;
 import View.MENU_CHOICE;
 import View.MenuViewer;
 import View.SUBJECT_CHOICE;
@@ -57,7 +57,7 @@ public class Academy {
 	private static void traineMenu() throws Exception {
 		int choice;
 
-		TraineDAO traineManager = new TraineDAO();
+		TraineeRegisterManager traineManager = new TraineeRegisterManager();
 		MenuViewer.traineMenuView();
 		choice = MenuViewer.scan.nextInt();
 		MenuViewer.scan.nextLine();
@@ -65,15 +65,15 @@ public class Academy {
 		switch (choice) {
 		case TRAINEE_CHOICE.LIST:
 			System.out.println("");
-			traineManager.traineList();
+			traineManager.traineeList();
 			break;
 		case TRAINEE_CHOICE.INSERT:
 			System.out.println("");
-			traineManager.traineRegistr();
+			traineManager.traineeRegistr();
 			break;
 		case TRAINEE_CHOICE.UPDATE:
 			System.out.println("");
-			traineManager.traineDelete();
+			traineManager.traineeDelete();
 			break;
 		case TRAINEE_CHOICE.MAIN:
 			return;

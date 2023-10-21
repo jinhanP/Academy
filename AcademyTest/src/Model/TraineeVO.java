@@ -2,26 +2,26 @@ package Model;
 
 import java.util.Objects;
 
-public class TraineVO {
+public class TraineeVO {
 	private int no;				// 수강 일련번호
-	private String sd_name;		// 학번
+	private String sd_num;		// 학번
 	private	String l_abbre;		// 과목약어
 	private String t_section;	// 과목구분
 	private String t_date;		// 등록일
 	
 	
 	
-	public TraineVO() {
+	public TraineeVO() {
 		super();
 		
 	}
 
 
 
-	public TraineVO(int no, String sd_name, String l_abbre, String t_section, String t_date) {
+	public TraineeVO(int no, String sd_num, String l_abbre, String t_section, String t_date) {
 		super();
 		this.no = no;
-		this.sd_name = sd_name;
+		this.sd_num = sd_num;
 		this.l_abbre = l_abbre;
 		this.t_section = t_section;
 		this.t_date = t_date;
@@ -41,14 +41,14 @@ public class TraineVO {
 
 
 
-	public String getSd_name() {
-		return sd_name;
+	public String getSd_num() {
+		return sd_num;
 	}
 
 
 
-	public void setSd_name(String sd_name) {
-		this.sd_name = sd_name;
+	public void setSd_num(String sd_num) {
+		this.sd_num = sd_num;
 	}
 
 
@@ -91,19 +91,19 @@ public class TraineVO {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(this.no, this.sd_name, this.l_abbre, this.t_date, this.t_section);
+		return Objects.hash(this.no, this.sd_num, this.l_abbre, this.t_date, this.t_section);
 	}
 
 
 
 	@Override
 	public boolean equals(Object obj) {
-		if(obj instanceof TraineVO) {
+		if(obj instanceof TraineeVO) {
 			return false;
 		}
-		TraineVO tvo = (TraineVO)obj;
+		TraineeVO tvo = (TraineeVO)obj;
 		
-		return tvo.no == this.no && tvo.sd_name.equals(this.sd_name) && tvo.l_abbre.equals(this.l_abbre) && tvo.t_date.equals(this.t_date) && tvo.t_section.equals(this.t_section);
+		return tvo.no == this.no && tvo.sd_num.equals(this.sd_num) && tvo.l_abbre.equals(this.l_abbre) && tvo.t_date.equals(this.t_date) && tvo.t_section.equals(this.t_section);
 	}
 	
 	
