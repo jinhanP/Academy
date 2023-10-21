@@ -1,9 +1,13 @@
 package AcademyMain;
+
+import Controller.LessonRegisterManager;
 import Controller.StudentRegisterManager;
 import Controller.SubjectRegisterManager;
 import Controller.TraineeRegisterManager;
+import View.LESSON_CHOICE;
 import View.MENU_CHOICE;
 import View.MenuViewer;
+import View.STUDENT_CHOICE;
 import View.SUBJECT_CHOICE;
 import View.TRAINEE_CHOICE;
 
@@ -83,18 +87,16 @@ public class Academy {
 	}
 
 	// 학과 메뉴
-	private static void lessonMenu() throws Exception {
-		int choice = 0;
-		// 학과정보를 curd를 위한 컨트롤러
+	public static void subjectMenu() throws Exception {
+		int choice;
 		SubjectRegisterManager subjectManager = new SubjectRegisterManager();
-		// 학과메뉴선택 디스플레이
 		MenuViewer.subjectMenuView();
-		// 학과 메뉴 입력
 		choice = MenuViewer.scan.nextInt();
 		MenuViewer.scan.nextLine();
 		switch (choice) {
 		case SUBJECT_CHOICE.LIST:
 			System.out.println("");
+			subjectManager.subjectList();
 			break;
 		case SUBJECT_CHOICE.INSERT:
 			System.out.println("");
@@ -116,33 +118,26 @@ public class Academy {
 	}
 
 	// 학생 메뉴
-	private static void studentMenu()throws Exception {
+	public static void studentMenu() throws Exception {
 		int choice;
-		// 학과정보를 curd를 위한 컨트롤러
-		 StudentRegisterManager studentManager = new StudentRegisterManager();
-		// 학과메뉴선택 디스플레이
+		StudentRegisterManager studnetManager = new StudentRegisterManager();
 		MenuViewer.studentMenuView();
-		// 학과 메뉴 입력
 		choice = MenuViewer.scan.nextInt();
 		MenuViewer.scan.nextLine();
-
 		switch (choice) {
-		case SUBJECT_CHOICE.LIST:
+		case STUDENT_CHOICE.INSERT:
 			System.out.println("");
+			studnetManager.studentRegistr();
 			break;
-		case SUBJECT_CHOICE.INSERT:
+		case STUDENT_CHOICE.UPDATE:
 			System.out.println("");
-			studentManager.studentRegistr();
+			studnetManager.studentUpdate();
 			break;
-		case SUBJECT_CHOICE.UPDATE:
+		case STUDENT_CHOICE.LIST:
 			System.out.println("");
-			studentManager.studentUpdate();
+			studnetManager.studnetTotalList();
 			break;
-		case SUBJECT_CHOICE.DELETE:
-			System.out.println("");
-			studentManager.studnetTotalList();
-			break;
-		case SUBJECT_CHOICE.MAIN:
+		case STUDENT_CHOICE.MAIN:
 			return;
 		default:
 			System.out.println("해당 메뉴 번호만 입력하세요.");
@@ -150,34 +145,34 @@ public class Academy {
 	}
 
 	// 과목 메뉴
-	private static void subjectMenu()throws Exception {
-		int choiceNum;
-//     	 LessonRegisterManager lessonManager = new LessonRegisterManager();
-		MenuViewer.subjectMenuView();
-		choiceNum = Integer.parseInt(MenuViewer.scan.nextLine());
-		switch (choiceNum) {
-		case SUBJECT_CHOICE.LIST:
+	public static void lessonMenu() throws Exception {
+		int choice;
+		LessonRegisterManager lessonManager = new LessonRegisterManager();
+		MenuViewer.lessonMenuView();
+		choice = MenuViewer.scan.nextInt();
+		MenuViewer.scan.nextLine();
+		switch (choice) {
+		case LESSON_CHOICE.LIST:
 			System.out.println("");
-//			 subjectManager.subjectList();
+			lessonManager.lessonList();
 			break;
-		case SUBJECT_CHOICE.INSERT:
+		case LESSON_CHOICE.INSERT:
 			System.out.println("");
-//			 subjectManager.subjectRegistr();
+			lessonManager.lessonRegistr();
 			break;
-		case SUBJECT_CHOICE.UPDATE:
+		case LESSON_CHOICE.UPDATE:
 			System.out.println("");
-//			 subjectManager.subjectUpdate();
+			lessonManager.lessonUpdate();
 			break;
-		case SUBJECT_CHOICE.DELETE:
+		case LESSON_CHOICE.DELETE:
 			System.out.println("");
-//			 subjectManager.subjectDelete();
+			lessonManager.lessonDelete();
 			break;
-		case SUBJECT_CHOICE.MAIN:
+		case LESSON_CHOICE.MAIN:
 			return;
 		default:
 			System.out.println("해당 메뉴 번호만 입력하세요.");
 		}
-
 	}
 
 }
